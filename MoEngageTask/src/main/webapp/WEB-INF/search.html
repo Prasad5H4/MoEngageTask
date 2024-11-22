@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Search</title>
+<style>
+	body{
+		background-color: lightcoral;
+	}
+	
+</style>
+</head>
+<body>
+ <h1>Search Response Codes</h1>
+    <form action="search" method="GET">
+        <label for="filter">Filter:</label>
+        <input type="text" id="filter" name="filter" placeholder="e.g., 2xx, 20x" required><br><br>
+        <button type="submit">Search</button>
+    </form>
+    <hr>
+    <div id="results">
+        <!-- Results will be displayed here -->
+        <c:forEach var="image" items="${imageUrls}">
+            <img src="${image}" alt="Response Code Image" style="width: 100px; height: auto;">
+        </c:forEach>
+    </div>
+    <form action="save" method="POST">
+        <label for="name">List Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <input type="hidden" name="responseCodes" value="${responseCodes}">
+        <input type="hidden" name="imageLinks" value="${imageUrls}">
+        <button type="submit">Save List</button>
+    </form>
+</body>
+</html>

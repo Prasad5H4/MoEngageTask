@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Edit</title>
+	<style>
+		body{
+			background-color:plum;
+		}	
+		
+		form {
+			background-color:lightcyan;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Edit List</h1>
+	<form action="edit" method="POST">
+		<input type="hidden" name="id" value="${id}">
+		<label for="name">List Name:</label>
+		<input type="text" id="name" name="name" value="${name}" required><br><br>
+		<label for="response_codes">Response Codes (comma-separated):</label>
+		<input type="text" id="response_codes" name="response_codes" value="${response_codes}" required><br><br>
+		<label for="image_links">Image Links (comma-separated):</label>
+		<input type="text" id="image_links" name="image_links" value="${image_links}" required><br><br>
+		<button type="submit">Save Changes</button>
+	</form>
+	<footer>copy rights 2024 all resevered "MoEngage"</footer>
+</body>
+
+</html>
